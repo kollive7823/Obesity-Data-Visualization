@@ -1,0 +1,358 @@
+
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<style>
+.container {
+    display: inline-block;
+	width: 600px;
+	height: 500px;
+}
+</style>
+<script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script src = "https://code.highcharts.com/highcharts.js"></script>
+		<script src = "https://code.highcharts.com/modules/data.js"></script>
+		<script src = "https://code.highcharts.com/modules/drilldown.js"></script>
+		<script src="http://code.highcharts.com/modules/exporting.js"></script>
+		
+		<select id="chartType">
+			  <<option value="0">-Select First Question-</option>
+			  <option value="Alabama">Students watching 3 or more hours of TV each School Day</option>
+			  <option value="Alaska">Students who consume fruit less than 1 time daily</option>
+			  <option value="Arizona">Students who achieve 1 hour or more of physical activity daily</option>
+			  <option value="Arkansas">Students who consume vegetables less than 1 time daily</option>
+			  <option value="California">Students who drank regular soda/pop at least one time per day</option>
+			  <option value="Colorado">Students who have an overweight classification</option>
+			  <option value="Connecticut">Students who have obesity</option>
+			  <option value="Delaware">Students who participate in daily physical education</option>
+			  
+		</select>
+		
+		<span style="display:inline-block; width:680px; height:90px;"></span>
+		<select id="chartType1">
+			  <<option value="0">-Select Second Question-</option>
+			  <option value="Alabama1">Students watching 3 or more hours of TV each School Day</option>
+			  <option value="Alaska1">Students who consume fruit less than 1 time daily</option>
+			  <option value="Arizona1">Students who achieve 1 hour or more of physical activity daily</option>
+			  <option value="Arkansas1">Students who consume vegetables less than 1 time daily</option>
+			  <option value="California1">Students who drank regular soda/pop at least one time per day</option>
+			  <option value="Colorado1">Students who have an overweight classification</option>
+			  <option value="Connecticut1">Students who have obesity</option>
+			  <option value="Delaware1">Students who participate in daily physical education</option>
+			  
+		</select>
+		
+		
+<div>
+
+<div id="container1" class="container" style="min-width: 600px; max-width:280px; height: 400px; margin: 0 auto; x: 100px; y:40px;" class="ChartBox"></div>
+<pre id="Alabama" style="display:none">Year,Total
+			2009,32.8,
+			2011,32.4,
+			2013,32.5,
+			2015,24.7,</pre>
+<pre id="Alaska" style="display:none">Year,Total
+			2009,24.7,
+			2011,28.7,
+			2013,27.1,
+			2015,27.1,</pre>
+<pre id="Arizona" style="display:none">Year,Total
+			2009,35.2,
+			2011,36,
+			2013,37.4,
+			2015,36.7,</pre>
+<pre id="Arkansas" style="display:none">Year,Total
+			2009,37.3,
+			2011,37.7,
+			2013,38.5,
+			2015,39,</pre>
+<pre id="California" style="display:none">Year,Total
+			2009,29.2,
+			2011,27.8,
+			2013,27,
+			2015,20.4,</pre>
+<pre id="Colorado" style="display:none">Year,Total
+			2009,15.6,
+			2011,15.2,
+			2013,16.6,
+			2015,16,</pre>
+<pre id="Connecticut" style="display:none">Year,Total
+			2009,13,
+			2011,13.7,
+			2013,11.8,
+			2015,13.9,</pre>
+<pre id="Delaware" style="display:none">Year,Total
+			2009,33.3,
+			2011,31.5,
+			2013,29.4,
+			2015,29.8,</pre>
+			
+<div id="container2" class="container" style="min-width: 600px; max-width:280px; height: 400px; margin: 0 auto; x: 100px; y:40px;" class="ChartBox"></div>
+<pre id="Alabama1" style="display:none">Year,Total
+			2009,32.8,
+			2011,32.4,
+			2013,32.5,
+			2015,24.7,</pre>
+<pre id="Alaska1" style="display:none">Year,Total
+			2009,24.7,
+			2011,28.7,
+			2013,27.1,
+			2015,27.1,</pre>
+<pre id="Arizona1" style="display:none">Year,Total
+			2009,35.2,
+			2011,36,
+			2013,37.4,
+			2015,36.7,</pre>
+<pre id="Arkansas1" style="display:none">Year,Total
+			2009,37.3,
+			2011,37.7,
+			2013,38.5,
+			2015,39,</pre>
+<pre id="California1" style="display:none">Year,Total
+			2009,29.2,
+			2011,27.8,
+			2013,27,
+			2015,20.4,</pre>
+<pre id="Colorado1" style="display:none">Year,Total
+			2009,15.6,
+			2011,15.2,
+			2013,16.6,
+			2015,16,</pre>
+<pre id="Connecticut1" style="display:none">Year,Total
+			2009,13,
+			2011,13.7,
+			2013,11.8,
+			2015,13.9,</pre>
+<pre id="Delaware1" style="display:none">Year,Total
+			2009,33.3,
+			2011,31.5,
+			2013,29.4,
+			2015,29.8,</pre>
+</div>
+
+
+
+
+
+</head>
+<body>
+
+
+		<input class="button" type="button" value="Back"onclick="location.href='Index.html'"/>
+
+
+
+
+
+
+
+<script language = "JavaScript">
+//$(function () {
+        //$('#container').highcharts({
+		`	`	
+		
+	 var dataOptions = {chart: {renderTo: 'container1', type: 'line'},
+						title: {text: 'Percent of students in grades 9-12 for a Behaviour'},
+						subtitle: {text: 'Select a behaviour from Dropdown list to compare'},
+						data: {csv: document.getElementById('Alabama').innerHTML},
+						exporting: {enabled: false},
+						credits: {enabled: false},
+	                    plotOptions: {column: {stacking: 'normal', marker: {enabled: false}}},
+						series: [{lineWidth: 1}, {color: '#c4392d', negativeColor: '#5679c4', fillOpacity: 0.5}]
+						}
+	var chart = new Highcharts.Chart(dataOptions);
+		
+
+
+
+$("#chartType").change(function() {
+  var selVal = $("#chartType").val();
+  
+ 
+  if (selVal == '0' || selVal == 'Alabama') {
+    dataOptions.data = {
+      csv: document.getElementById('Alabama').innerHTML
+	  
+	
+    }
+	dataOptions.title = {
+		text: "Percent of students in grades 9-12 watching 3 or more hours of television each school day"
+		}
+  }else if (selVal == '0' || selVal == 'Arizona') {
+    dataOptions.data = {
+      csv: document.getElementById('Arizona').innerHTML
+	  
+    }
+	dataOptions.title = {
+		text: "Percent of students in grades 9-12 who achieve 1 hour or more of moderate-and/or vigorous-intensity physical activity daily"
+		}
+		}else if (selVal == '0' || selVal == 'Alaska') {
+    dataOptions.data = {
+      csv: document.getElementById('Alaska').innerHTML
+    }
+	dataOptions.title = {
+		text: "Percent of students in grades 9-12 who consume fruit less than 1 time daily"
+		}
+  }else if (selVal == '0' || selVal == 'Arkansas') {
+    dataOptions.data = {
+      csv: document.getElementById('Arkansas').innerHTML
+    }
+	dataOptions.title = {
+		text: "Percent of students in grades 9-12 who consume vegetables less than 1 time daily"
+		}
+  }else if (selVal == '0' || selVal == 'California') {
+    dataOptions.data = {
+      csv: document.getElementById('California').innerHTML
+    }
+	dataOptions.title = {
+		text: "Percent of students in grades 9-12 who drank regular soda/pop at least one time per day"
+		}
+  }else if (selVal == '0' || selVal == 'Colorado') {
+    dataOptions.data = {
+      csv: document.getElementById('Colorado').innerHTML
+    }
+	dataOptions.title = {
+		text: "Percent of students in grades 9-12 who have an overweight classification"
+		}
+  }else if (selVal == '0' || selVal == 'Connecticut') {
+    dataOptions.data = {
+      csv: document.getElementById('Connecticut').innerHTML
+    }
+	dataOptions.title = {
+		text: "Percent of students in grades 9-12 who have obesity"
+		}
+  }else if (selVal == '0' || selVal == 'Delaware') {
+    dataOptions.data = {
+      csv: document.getElementById('Delaware').innerHTML
+    }
+	dataOptions.title = {
+		text: "Percent of students in grades 9-12 who participate in daily physical education"
+		}
+  }
+  var chart = new Highcharts.Chart(dataOptions);
+ 
+    
+  
+});
+		
+           
+       // });
+    //});
+    
+//$(function () {
+        //$('#container2').highcharts({
+           
+       // });
+   // });
+    
+
+	 
+	 var dataOptions1 = {chart: {renderTo: 'container2', type: 'line'},
+						title: {text: 'Percent of students in grades 9-12 for a Behaviour'},
+						subtitle: {text: 'Select a behaviour from Dropdown list to compare'},
+						data: {csv: document.getElementById('Alabama1').innerHTML},
+						exporting: {enabled: false},
+						credits: {enabled: false},
+	                    plotOptions: {column: {stacking: 'normal', marker: {enabled: false}}},
+						series: [{lineWidth: 1}, {color: '#c4392d', negativeColor: '#5679c4', fillOpacity: 0.5}]
+						}
+	var chart = new Highcharts.Chart(dataOptions1);
+		
+
+
+
+$("#chartType1").change(function() {
+  var selVal = $("#chartType1").val();
+  
+ 
+  if (selVal == '0' || selVal == 'Alabama1') {
+    dataOptions1.data = {
+      csv: document.getElementById('Alabama1').innerHTML
+    }
+	dataOptions1.title = {
+		text: "Percent of students in grades 9-12 watching 3 or more hours of television each school day"
+		}
+  }else if (selVal == '0' || selVal == 'Arizona1') {
+    dataOptions1.data = {
+      csv: document.getElementById('Arizona1').innerHTML
+    }
+	dataOptions1.title = {
+		text: "Percent of students in grades 9-12 who achieve 1 hour or more of moderate-and/or vigorous-intensity physical activity daily"
+		}
+  }else if (selVal == '0' || selVal == 'Alaska1') {
+    dataOptions1.data = {
+      csv: document.getElementById('Alaska1').innerHTML
+    }
+	dataOptions1.title = {
+		text: "Percent of students in grades 9-12 who consume fruit less than 1 time daily"
+		}
+  }else if (selVal == '0' || selVal == 'Arkansas1') {
+    dataOptions1.data = {
+      csv: document.getElementById('Arkansas1').innerHTML
+    }
+	dataOptions1.title = {
+		text: "Percent of students in grades 9-12 who consume vegetables less than 1 time daily"
+		}
+  }else if (selVal == '0' || selVal == 'California1') {
+    dataOptions1.data = {
+      csv: document.getElementById('California1').innerHTML
+    }
+	dataOptions1.title = {
+		text: "Percent of students in grades 9-12 who drank regular soda/pop at least one time per day"
+		}
+  }else if (selVal == '0' || selVal == 'Colorado1') {
+    dataOptions1.data = {
+      csv: document.getElementById('Colorado1').innerHTML
+    }
+	dataOptions1.title = {
+		text: "Percent of students in grades 9-12 who have an overweight classification"
+		}
+  }else if (selVal == '0' || selVal == 'Connecticut1') {
+    dataOptions1.data = {
+      csv: document.getElementById('Connecticut1').innerHTML
+    }
+	dataOptions1.title = {
+		text: "Percent of students in grades 9-12 who have obesity"
+		}
+  }else if (selVal == '0' || selVal == 'Delaware1') {
+    dataOptions1.data = {
+      csv: document.getElementById('Delaware1').innerHTML
+    }
+	dataOptions1.title = {
+		text: "Percent of students in grades 9-12 who participate in daily physical education"
+		}
+  }
+  var chart = new Highcharts.Chart(dataOptions1);
+ 
+    
+  
+});
+	
+	 
+	
+	
+
+ 
+
+    </script>
+
+
+   </body>
+   
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			
