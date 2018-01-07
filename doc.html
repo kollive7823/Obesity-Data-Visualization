@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+    background-color:#fff7bc;
+}
+h1 {
+    color: #4d4d4d;
+    margin-left: 40px;
+} 
+div{
+   font-size: 13px;
+   text-align: center;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:active {
+    text-decoration: underline;
+}
+
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 1px 2px;
+	align: justify;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 1px 0px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.button1 {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #4CAF50;
+}
+
+.button1:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.button2 {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #008CBA;
+}
+
+.button2:hover {
+    background-color: #008CBA;
+    color: white;
+}
+
+.button3 {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #f44336;
+}
+.button3:hover {
+    background-color: #f44336;
+    color: white;
+}
+
+</style>
+</head>
+<body style="font-family:Verdana;">
+
+<div style="background-color:#fdae61;padding:15px;">
+  <h1 align="center">Youth Risk Behavior: Obesity Pattern Among youth And The Influence Of Nutritional Behavior And Physical Activity.</h1>
+ <p align="center"> <b><a href="Index.html" target="_blank" >Home</a>&nbsp;&nbsp;
+ <a href="Correlation.html" target="_blank">Compare Behaviours</a> &nbsp;
+ <a href="Analytical Dashboard.html" target="_blank">Analytical Dashboard</a> &nbsp;
+ <a href="doc.html" target="_blank">Document</a> &nbsp;
+   <a href="https://youtu.be/tEeR8zigfPw" target="_blank">Video</a>&nbsp;
+   <a href="https://www.healthdata.gov/dataset/nutrition-physical-activity-and-obesity-youth-risk-behavior-surveillance-system-0" target="_blank">Data Set</a> 
+   </b></p> 
+</div>
+<br><br><br>
+The database choosen for the Project includes data on adolescent's diet, physical activity, and weight status from Youth Risk Behavior Surveillance System (YRBSS). This data is used for DNPAO's Data, Trends, and Maps database, which provides national and state specific data on obesity, nutrition, physical activity, and breastfeeding. <br><br>
+
+<b>Data Set : &nbsp<a href="https://www.healthdata.gov/dataset/nutrition-physical-activity-and-obesity-youth-risk-behavior-surveillance-system-0" target="_blank"> https://www.healthdata.gov/dataset/nutrition-physical-activity-and-obesity-youth-risk-behavior-surveillance-system-0</a>
+</b><br>
+<br>
+<p><b>Aim: </b>The main objective of this visualization is to help the analyst to identify the prime cause of obesity in different groups of the youth population. The groups are based on gender, grade<br> and ethnicity. Also to see if there is any pattern for different states. 
+Few questions we are attempting to address through this visualization project is as below: <br><br>
+★ Year wise obesity trend in each state. <br>
+★ Year wise obesity trend at country level. <br>
+★ Year wise obesity trend of each population group both at state and country level <br>
+★ Influence of race-ethnicity on the behavior of students:<b>fruits and vegetables-behavior, physical activity- behavior, television viewing- behavior and impact on obesity/weight status.</b> <br>
+★ How does the grade influence the race-ethnicity of the student to impact the various categories of the students like <b>students who have obesity, eat less than 1 fruit a day, eat less than 1 veggies a day, overweight classification, 3+ hrs tv each school day, participate in daily physical education, 1+ hr of daily physical activity , drinking soda/pop min 1 time a day.</b><br> 
+★ Is there any trend over years to notice the common behavior between students in a state sharing different grades? <br></p>
+<p><br><br> <b> Design Plan</b><br><br>
+  <img src="images/design plan.jpeg"  width="650" height="500">
+  
+  <br>The Design Plan for the project was to have a easy to understand and view the obesity risk level across various behavious in a single webpage which is Colour Blind Safe.<br>
+  The Page is divided into 8 categories having easy to relate pictures with titles which enables users to choose a particular category easily.<br>
+  Each category has three links for the user to view and understand the obesity levels through visualization charts for each state for a particularr behaviour.<br><br>
+  The Country Wise view allows the users to see the data for the particular behaviour of students across all the states and compare each state with other with the help of pie charts over other states which indicate the percentage of students who share the behaviour.<br>The pic chart's size varies from state to state as the size factor is dependent on the percentage values of teh latest year which is 2015.<br>
+  Each Pie Chart has a tool tip which displays the percentage values for the years 2015, 2013, 2013 and 2009. These values are arranged in a decreasing order in the tool tip for the users to understand in which year the behaviour was highest among the students in that state.<br>
+  The Legend below helps the users to understand the colour shade for each year in the Map.<br><br><br>
+    <img src="images/country wise.jpg" width="650" height="500">
+	<br><br> The Grade Wise view allows the users to see the trend of that particular behaviour for grade wise data
+	across all the states, which can be selected from the state drop down list. The Charts change as per the state selection.<br> The default chart seen is of the first state to give the users an idea of they can view under grade wise tab of each behaviour.<br> The two charrts palced adjacent to each other help to identify the trends across each grade and the gender for that particular year.<br>
+	The Tool Tip provides the exact values of the percentage of students at that point in the charts. The charts are designed to maintain a simplistic view for the user. The line chart displays the trend over the years and the stacked bar chart displays the gender wise data over the years.<br>
+	The legend below each charts help the user to understand the visualization promptly.<br><br><br>
+<br>   <img src="images/grade wise.jpg" width="650" height="500"><br>
+<br>
+The Ethinicity Wise view allows the users to see the trend of that particular behaviour for ethicity race wise data 
+ across all the states, which can be selected from the state drop down list. The Charts change as per the state selection.<br> The default chart seen is of the first state to give the users an idea of they can view under ethinicity
+ wise tab of each behaviour.<br> The two charrts palced adjacent to each other help to identify the trends across each race-ethnicity
+ and the gender for that particular year.<br>
+	The Tool Tip provides the exact values of the percentage of students at that point in the charts. The charts are designed to maintain a simplistic view for the user. The stacked bar chart used to display the ethinicity data helps the users to see the groups of races that share the similar trends
+	 over the years and the stacked bar chart displays the gender wise data over the years.<br>
+	The legend below each charts help the user to understand the visualization promptly.<br><br><br>
+<br>   <img src="images/ethinicity wise.jpg" width="650" height="500"><br>
+<br>
+The Compare Behaviour page helps the users to actually notice trends and compare any two behaviours side by side. The page allows the user to select from two drop down lists to select two behaviours and view the line charts which display the data across years.<br>The Title and the legend below
+helps to undertand the visualization.This page allows the users to understand the correlation between two student behaviours and notice the reason behing the particular behaviour of
+the students for that year.<br><br><br>
+
+<br>   <img src="images/correlation.jpeg"width="650" height="500"><br>
+
+<br>
+The Analytical Dashboard allows the users to actually compare all the behaviours at the same time. This is needed as this helps professionals to understand the cause and the effect of a particular student behaviour over the other.
+The analytical dashboard is designed with a thought to have a one single view of the variation of each of the question over the years for a particular state, category and stratification. The analytical dashboard consist of two sections. The analytic provided is for a particular state, category and Stratification which are to be seleted from a drop down list at the top. On selecting the filters the top section of the dashboard will display across the year barchart trend for all 8 questions. This is a one screen view of time variation of all the 8 questions. Further on click of any particular question the bottom section will display barchart trend for that particular question and for the same filter criteria seleted across all the states for a particular year which can be seleted from a filter in the bottom section.
+<br>
+<br>   <img src="images/analytical dashboard.jpg"width="650" height="500"><br>
+</p>
+<br>
+<p><b>
+References:</b>
+https://www.highcharts.com/<br>
+http://colorbrewer2.org/#type=sequential&scheme=BuGn&n=3<br>
+https://public.tableau.com/en-us/s/<br>
+https://www.youtube.com/<br>
+https://www.google.com/<br>
+</p>
+
+
+
+
+
+</body>
+</html>
