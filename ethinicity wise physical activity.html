@@ -1,0 +1,961 @@
+
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<style>
+.container {
+    display: inline-block;
+}
+</style>
+<script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script src = "https://code.highcharts.com/highcharts.js"></script>
+		<script src = "https://code.highcharts.com/modules/data.js"></script>
+		<script src = "https://code.highcharts.com/modules/drilldown.js"></script>
+		<script src="http://code.highcharts.com/modules/exporting.js"></script>
+		<span style="display:inline-block; width:530px; height:90px;"></span>
+		<select id="chartType">
+			  <<option value="0">-select state-</option>
+			  <option value="Alabama">Alabama</option>
+			  <option value="Alaska">Alaska</option>
+			  <option value="Arizona">Arizona</option>
+			  <option value="Arkansas">Arkansas</option>
+			  <option value="California">California</option>
+			  <option value="Colorado">Colorado</option>
+			  <option value="Connecticut">Connecticut</option>
+			  <option value="Delaware">Delaware</option>
+			  <option value="District of Colombia">District of Colombia</option>
+			  <option value="Florida">Florida</option>
+			  <option value="Georgia">Georgia</option>
+			  <option value="Hawaii">Hawaii</option>
+			  <option value="Idaho">Idaho</option>
+			  <option value="Illinois">Illinois</option>
+			  <option value="Indiana">Indiana</option>
+			  <option value="Iowa">Iowa</option>
+			  <option value="Kansas">Kansas</option>
+			  <option value="Kentucky">Kentucky</option>
+			  <option value="Louisiana">Louisiana</option>
+			  <option value="Massachusetts">Massachusetts</option>
+			  <option value="Maryland">Maryland</option>
+			  <option value="Maine">Maine</option>
+			  <option value="Michigan">Michigan</option>
+			  <option value="Missouri">Missouri</option>
+			  <option value="Mississippi">Mississippi</option>
+			  <option value="Montana">Montana</option>
+			  <option value="North Carolina">North Carolina</option>
+			  <option value="North Dakota">North Dakota</option>
+			  <option value="Nebraska">Nebraska</option>
+			  <option value="New Hampshire">New Hampshire</option>
+			  <option value="New Jersey">New Jersey</option>
+			  <option value="New Mexico">New Mexico</option>
+			  <option value="Nevada">Nevada</option>
+			  <option value="New York">New York</option>
+			  <option value="Ohio">Ohio</option>
+			  <option value="Oklahoma">Oklahoma</option>
+			  <option value="Pennsylvania">Pennsylvania</option>
+			  <option value="Puerto Rico">Puerto Rico</option>
+			  <option value="Rhode Island">Rhode Island</option>
+			  <option value="South Carolina">South Carolina</option>
+			  <option value="South Dakota">South Dakota</option>
+			  <option value="Tennessee">Tennessee</option>
+			  <option value="Texas">Texas</option>
+			  <option value="Utah">Utah</option>
+			  <option value="Virginia">Virginia</option>
+			  <option value="Wisconsin">Wisconsin</option>
+			  <option value="West Virginia">West Virginia</option>
+			  <option value="Wyoming">Wyoming</option>
+		</select>
+		
+		
+<div>
+<div id="container1" class="container" 		style="min-width: 600px; max-width:280px; height: 400px; margin: -100 auto; x: 100px; y:40px;" class="ChartBox"></div>
+<pre id="Alaska" style="display:none">Year,Male,Female
+			2007,25.0,12.2,
+			2009,26.0,14.0,
+			2011,28.0,14.3,
+			2013,27.7,14.2,
+			2015,24.7,17,</pre>
+<pre id="Alabama" style="display:none">Year,Male,Female
+			2009,25.1,13.4,
+			2011,41.7,15,
+			2013,35.8,14.1,
+			2015,35.5,15.2,</pre>
+<pre id="Arkansas" style="display:none">Year,Male,Female
+			2013,34.3,21.1,
+			2015,36.7,20.7,</pre>
+<pre id="Arizona" style="display:none">Year,Male,Female
+			2009,33.1,18.1,
+			2011,31.9,18.1,
+			2013,27.8,15.5,
+			2015,32.1,19.3,</pre>
+<pre id="California" style="display:none">Year,Male,Female
+			2015,31.8,18.9,</pre>
+<pre id="Colorado" style="display:none">Year,Male,Female
+			2009,34.1,19.4,
+			2011,36.4,21.3,</pre>
+<pre id="Connecticut" style="display:none">Year,Male,Female
+			2007,31.1,17.2,
+			2009,34.6,14.6,
+			2011,34.8,17,
+			2013,33.4,18.7,
+			2015,32.6,18.1,</pre>
+<pre id="District of Colombia" style="display:none">Year,Male,Female
+			2007,23.2,13.9,
+			2011,21.0,13.0,
+			2015,20.9,11.7,</pre>
+<pre id="Delaware" style="display:none">Year,Male,Female
+			2007,30.6,14.9,
+			2009,33.7,13.9,
+			2011,32.4,17.6,
+			2013,32.7,14.8,
+			2015,31.4,17.6,</pre>
+<pre id="Florida" style="display:none">Year,Male,Female
+			2013,34.1,16.4,
+			2015,34.0,14.3,</pre>
+<pre id="Georgia" style="display:none">Year,Male,Female
+			2007,36.4,15.9,
+			2009,33,14.3,
+			2011,36.1,14.2,
+			2013,34.5,15.1,</pre>
+<pre id="Guam" style="display:none">Year,Male,Female
+			2015,30.1,15.6,</pre>
+<pre id="Hawaii" style="display:none">Year,Male,Female
+			2007,22.3,13.7,
+			2009,24.7,11,
+			2011,28.8,13.6,
+			2013,30.6,13.6,
+			2015,26.7,14.2,</pre>
+<pre id="Iowa" style="display:none">Year,Male,Female
+			2007,32.9,19.5,
+			2011,37.7,19.9,</pre>
+<pre id="Idaho" style="display:none">Year,Male,Female
+			2007,31,14.9,
+			2009,38,16.5,
+			2011,36.8,14.5,
+			2013,38.2,17.2,
+			2015,37.9,21.1,</pre>
+<pre id="Illinois" style="display:none">Year,Male,Female
+			2007,29.5,13.7,
+			2009,31.8,16.2,
+			2011,30.5,15.8,
+			2013,31.6,19.3,
+			2015,33.8,19.9,</pre>
+<pre id="Indiana" style="display:none">Year,Male,Female
+			2007,30.6,16.4,
+			2009,32.3,14.3,
+			2011,32.3,15.8,
+			2015,33.8,16.5,</pre>
+<pre id="Kansas" style="display:none">Year,Male,Femal
+			2007,36.2,15.8,
+			2009,37.4,17.7,
+			2011,40.5,19.5,
+			2013,37.1,19.1,</pre>
+<pre id="Kentucky" style="display:none">Year,Male,Female
+			2007,24.0,11.1,
+			2009,30.4,12.1,
+			2011,30.4,13.3,
+			2013,29.5,15.4,
+			2015,27.3,12.9,</pre>
+<pre id="Louisiana" style="display:none">Year,Male,Female
+			2007,32.9,18.3,
+			2011,35.4,13.9,</pre>
+<pre id="Massachusetts" style="display:none">Year,Male,Female
+			2007,29.1,13.9,
+			2013,29.4,16.4,
+			2015,30.4,17.6,</pre>
+<pre id="Maryland" style="display:none">Year,Male,Female
+			2013,27.5,16,
+			2015,25,14.1,</pre>
+<pre id="Maine" style="display:none">Year,Male,Female
+			2009,22.9,12.6,
+			2011,30.3,17.1,
+			2013,27.8,16.9,
+			2015,27.4,15.6,</pre>
+<pre id="Michigan" style="display:none">Year,Male,Female
+			2007,28.3,15.5,
+			2009,32.3,18.4,
+			2011,35.1,18.8,
+			2013,33.7,19.5,
+			2015,30.0,19.3,</pre>
+<pre id="Missouri" style="display:none">Year,Male,Female
+			2007,38.0,15.2,
+			2009,36.6,16.5,
+			2013,36.2,18.0,
+			2015,33.5,19.0,</pre>
+<pre id="Mississippi" style="display:none">Year,Male,Female
+			2007,30.9,12.6,
+			2009,30.2,16.0,
+			2011,37.4,14.6,
+			2013,34.4,17.5,
+			2015,28.6,13.9,</pre>
+<pre id="Montana" style="display:none">Year,Male,Female
+			2007,28.8,13.2,
+			2009,27.5,14.4,
+			2011,36.1,20.9,
+			2013,35.4,19.6,
+			2015,36.3,20.7,</pre>
+<pre id="North Carolina" style="display:none">Year,Male,Female
+			2007,31.5,17.7,
+			2009,33.6,15.2,
+			2011,33.6,18.4,
+			2013,36.0,15.4,
+			2015,33.8,14.8,</pre>
+<pre id="North Dakota" style="display:none">Year,Male,Female
+			2007,30.3,12.8,
+			2013,30.0,19.0,
+			2015,34.5,15.7,</pre>
+<pre id="Nebraska" style="display:none">Year,Male,Female
+			2011,35.8,19.8,
+			2013,40.4,23.9,
+			2015,35.6,23.6,</pre>
+<pre id="New Hampshire" style="display:none">Year,Male,Female
+			2007,30.4,17.3,
+			2009,31.4,14.9,
+			2013,30.1,15.3,
+			2015,29.0,15.1,</pre>
+<pre id="New Jersey" style="display:none">Year,Male,Female
+			2013,38.0,17.1,</pre>
+<pre id="New Mexico" style="display:none">Year,Male,Female
+			2007,26.2,18.1,
+			2009,29.4,17.5,
+			2011,33.8,18.5,
+			2013,38.6,23.5,
+			2015,38.3,23.4,</pre>
+<pre id="Nevada" style="display:none">Year,Male,Female
+			2007,29.1,15.9,
+			2009,33.0,16.5,
+			2013,31.0,17.2,
+			2015,35.9,21.2,</pre>
+<pre id="New York" style="display:none">Year,Male,Female
+			2007,27.9,13.3,
+			2009,31.6,14.7,
+			2011,33.9,16.2,
+			2013,33.8,17.6,
+			2015,27.8,19.0,</pre>
+<pre id="Ohio" style="display:none">Year,Male,Female
+			2007,35.6,18.0,
+			2011,35.3,15.4,
+			2013,34.2,17.6,</pre>
+<pre id="Oklahoma" style="display:none">Year,Male,Female
+			2007,41.4,16.9,
+			2009,37.9,16.7,
+			2011,47.9,18.3,
+			2013,49.9,26.6,
+			2015,43.6,21.5,</pre>
+<pre id="Pennsylvania" style="display:none">Year,Male,Female
+			2009,34.9,20.0,
+			2015,32.4,17.3,</pre>
+<pre id="Puerto Rico" style="display:none">Year,Male,Female
+			2015,25.1,12.3,</pre>
+<pre id="Rhode Island" style="display:none">Year,Male,Female
+			2007,34.2,14.3,
+			2009,31.3,16.0,
+			2011,35.4,18.2,
+			2013,30.8,15.9,
+			2015,27.7,12.6,</pre>
+<pre id="South Carolina" style="display:none">Year,Male,Female
+			2007,26.4,13.8,
+			2009,22.5,11.9,
+			2011,36.1,15.8,
+			2013,32.1,15.4,
+			2015,34.0,13.6,</pre>
+<pre id="South Dakota" style="display:none">Year,Male,Female
+			2007,29.5,15.7,
+			2009,36.0,16.6,
+			2011,37.3,17.1,
+			2013,34.8,20.6,
+			2015,36.8,18.8,</pre>
+<pre id="Tennessee" style="display:none">Year,Male,Female
+			2007,35.4,13.2,
+			2009,34.8,13.1,
+			2011,41.8,18.2,
+			2013,34.9,15.8,
+			2015,33.9,17.6,</pre>
+<pre id="Texas" style="display:none">Year,Male,Female
+			2007,34.6,16.5,
+			2009,37.5,16.6,
+			2011,35.4,18.7,
+			2013,38.9,20.6,</pre>
+<pre id="Utah" style="display:none">Year,Male,Female
+			2007,26.7,12.8,
+			2011,27.1,14.0,
+			2013,27.6,11.5,</pre>
+<pre id="Virginia" style="display:none">Year,Male,Female
+			2011,31.1,17.1,
+			2013,31.6,15.9,
+			2015,32.3,17.6,</pre>
+<pre id="Vermont" style="display:none">Year,Male,Female
+			2007,32.5,18.6,
+			2009,30.5,16.4,
+			2011,32.2,16.1,
+			2013,32.8,17.7,
+			2015,30.3,15.6,</pre>
+<pre id="Wisconsin" style="display:none">Year,Male,Female
+			2009,29.6,17.8,
+			2011,33.9,21.3,
+			2013,29.5,18.3,</pre>
+<pre id="West Virginia" style="display:none">Year,Male,Female
+			2007,35.0,16.8,
+			2009,27.9,17.0,
+			2011,38.4,19.2,
+			2013,42.0,19.6,
+			2015,33.0,18.3,</pre>
+<pre id="Wyoming" style="display:none">Year,Male,Female
+			2007,33.4,19.1,
+			2009,33.6,17.2,
+			2011,34.3,17.2,
+			2013,36.3,19.9,
+			2015,33.5,20.5,</pre>
+
+
+	
+			<div id="container2" class="container" style=style="min-width: 200px; max-width:280px; height: 350px; margin: -100 auto; x: 100px; y:40px" class="ChartBox"></div>
+<pre id="Alaska1" style="display:none">Year,Asian,Non-Hispanic Black,Hispanic,Hawaiian/Pacific Islander,American Indian/Alaska Native,Non-Hispanic White,2 or more races
+			2007,,,,20.1,,8.3,21.1,
+			2009,17.4,,,19.5,,17.2,22.8,
+			2011,24.8,,,18.5,,23.7,20.9,
+			2013,26.9,15.1,,18.2,,18,22.7,
+			2015,20.4,,,19.8,,22.7,21.2,</pre>
+<pre id="Alabama1" style="display:none">Year,Asian,Non-Hispanic Black,Hispanic,Hawaiian/Pacific Islander,American Indian/Alaska Native,Non-Hispanic White,2 or more races
+			2009,,,14.9,,,,22.4,
+			2011,,,22.6,,,,32.2,
+			2013,,,21.9,17.8,,,26.9,
+			2015,,,20.9,,,,29.1,</pre>
+<pre id="Arkansas1" style="display:none">Year,Asian,Non-Hispanic Black,Hispanic,Hawaiian/Pacific Islander,American Indian/Alaska Native,Non-Hispanic White,2 or more races
+			2013,,,21.6,16.5,,,31,
+			2015,33.6,,27.5,22.6,,,29.5,</pre>
+<pre id="Arizona1" style="display:none">Year,Asian,Non-Hispanic Black,Hispanic,Hawaiian/Pacific Islander,American Indian/Alaska Native,Non-Hispanic White,2 or more races
+			2009,,,31.8,21.6,,19.9,30.3,
+			2011,,,36.4,24.2,,,25.7,
+			2013,,,,23.4,,,20.9,
+			2015,,,,24.9,,35.6,26,</pre>
+<pre id="California1" style="display:none">Year,Asian,Non-Hispanic Black,Hispanic,Hawaiian/Pacific Islander,American Indian/Alaska Native,Non-Hispanic White,2 or more races
+			2015,29.3,19.4,,25,,,29.5,</pre>
+<pre id="Colorado1" style="display:none">Year,Asian,Non-Hispanic Black,Hispanic,Hawaiian/Pacific Islander,American Indian/Alaska Native,Non-Hispanic White,2 or more races
+			2009,,,,21.1,,,29.3,
+			2011,,,,25.5,,,29,</pre>
+<pre id="Connecticut1" style="display:none">Year,Asian,Non-Hispanic Black,Hispanic,Hawaiian/Pacific Islander,American Indian/Alaska Native,Non-Hispanic White,2 or more races
+			2007,,,20.2,18.5,,,26.6,
+			2009,,,20,19.4,,,27.3,
+			2011,,,16.7,19,,,28.8,
+			2013,,,22.2,18.2,,,29.3,
+			2015,24.7,,24.3,19.3,,,27.5,</pre>
+<pre id="District of Colombia1" style="display:none">Year,Asian,Non-Hispanic Black,Hispanic,Hawaiian/Pacific Islander,American Indian/Alaska Native,Non-Hispanic White,2 or more races
+			2007,,,19.3,7.4,,,,
+			2011,,,17.2,10.2,,,,
+			2015,15.9,13.1,15.8,13.4,,18,24.1,</pre>
+<pre id="Delaware1" style="display:none">Year,Asian,Non-Hispanic Black,Hispanic,Hawaiian/Pacific Islander,American Indian/Alaska Native,Non-Hispanic White,2 or more races
+			2007,17.2,,21.9,23,,,23.9,
+			2009,26.5,,21.2,18.1,,,26.6,
+			2011,29.7,,24,21.2,,,26,
+			2013,34.4,,21,22.7,,,23.7,
+			2015,33,,23.6,20.2,,,25.6,</pre>
+<pre id="Florida1" style="display:none">Year,Asian,Non-Hispanic Black,Hispanic,Hawaiian/Pacific Islander,American Indian/Alaska Native,Non-Hispanic White,2 or more races
+			2013,29,17.6,23.6,21.3,,,28,
+			2015,25,13.3,19.9,22.8,,,27.8,</pre>
+<pre id="Georgia1" style="display:none">Year,Asian,Non-Hispanic Black,Hispanic,Hawaiian/Pacific Islander,American Indian/Alaska Native,Non-Hispanic White,2 or more races
+			2007,,,22.6,21.4,,,28.8,
+			2009,,,23.6,13.4,,,25.7,
+			2011,,,23.5,22.7,,,27.8,
+			2013,,,22.6,23.2,,,26.7,</pre>
+<pre id="Guam1" style="display:none">Year,Asian,Non-Hispanic Black,Hispanic,Hawaiian/Pacific Islander,American Indian/Alaska Native,Non-Hispanic White,2 or more races
+			2015,31.9,22.9,,,24.3,,,</pre>
+<pre id="Hawaii1" style="display:none">Year,Asian,Non-Hispanic Black,Hispanic,Hawaiian/Pacific Islander,American Indian/Alaska Native,Non-Hispanic White,2 or more races
+			2007,15.6,13.8,,23.7,22.1,,,
+			2009,13.8,13.2,,17,24.3,,22,
+			2011,20.4,16,,19.8,23.1,,31.3,
+			2013,23.5,18.5,,20.4,26.2,,24.2,
+			2015,21.2,17.3,,18.5,25.4,,19.7,</pre>
+<pre id="Iowa1" style="display:none">Year,Asian,Non-Hispanic Black,Hispanic,Hawaiian/Pacific Islander,American Indian/Alaska Native,Non-Hispanic White,2 or more races
+			2007,,,,,,,26,
+			2011,,,,32.2,,,29.2,</pre>
+<pre id="Idaho1" style="display:none">Year,Asian,Non-Hispanic Black,Hispanic,Hawaiian/Pacific Islander,American Indian/Alaska Native,Non-Hispanic White,2 or more races
+			2007,,,,16.5,,,24.3,
+			2009,,,,25.2,,,28.2,
+			2011,,,,28.3,,,25,
+			2013,,,,26.7,,,27.9,
+			2015,,,,26.7,,,29.3,</pre>
+<pre id="Illinois1" style="display:none">Year,Asian,Non-Hispanic Black,Hispanic,Hawaiian/Pacific Islander,American Indian/Alaska Native,Non-Hispanic White,2 or more races
+			2007,,,23.7,14,,,22.6,
+			2009,19.1,15.5,20.9,19.8,,,26.2,
+			2011,33.5,,20.3,19.8,,,25,
+			2013,30.6,11.1,23.3,19.3,,,28.4,
+			2015,27.7,21.8,24.6,20,,,30.5,</pre>
+<pre id="Indiana1" style="display:none">Year,Asian,Non-Hispanic Black,Hispanic,Hawaiian/Pacific Islander,American Indian/Alaska Native,Non-Hispanic White,2 or more races
+			2007,,,26.3,21.6,,,23.4,
+			2009,,,20.8,24.6,,,23.7,
+			2011,23.5,,16.4,25,,,25.6,
+			2015,32.5,,14.9,19.4,,,27.4,</pre>
+<pre id="Kansas1" style="display:none">Year,Asian,Non-Hispanic Black,Hispanic,Hawaiian/Pacific Islander,American Indian/Alaska Native,Non-Hispanic White,2 or more races
+			2007,,,25.5,22.1,,,27.2,
+			2009,29,,26.7,20.5,,,29.7,
+			2011,22.7,,29.8,28.5,,,31,
+			2013,28,,,25.9,,,28.9,</pre>
+<pre id="Kentucky1" style="display:none">Year,Asian,Non-Hispanic Black,Hispanic,Hawaiian/Pacific Islander,American Indian/Alaska Native,Non-Hispanic White,2 or more races
+			2007,,,16.7,19.8,,,17.7,
+			2009,,,9.7,,,,23.1,
+			2011,,,18,20.6,,,22.5,
+			2013,,,15.3,19.7,,,23.6,
+			2015,25.4,,18.8,27.7,,,20,</pre>
+<pre id="Louisiana1" style="display:none">Year,Asian,Non-Hispanic Black,Hispanic,Hawaiian/Pacific Islander,American Indian/Alaska Native,Non-Hispanic White,2 or more races
+			2007,,,22.4,,,,27.2,
+			2011,,,21.6,,,,25.6,</pre>
+<pre id="Massachusetts1" style="display:none">Year,Asian,Non-Hispanic Black,Hispanic,Hawaiian/Pacific Islander,American Indian/Alaska Native,Non-Hispanic White,2 or more races
+			2007,21.3,12.1,21.2,17.7,,,22.4,
+			2013,25.3,14.7,20.8,19.1,,,24.4,
+			2015,21.1,18.8,16.6,17.4,,,27.2,</pre>
+<pre id="Maryland1" style="display:none">Year,Asian,Non-Hispanic Black,Hispanic,Hawaiian/Pacific Islander,American Indian/Alaska Native,Non-Hispanic White,2 or more races
+			2013,23.1,17.2,18.2,18.2,28.2,24.2,25.3,
+			2015,21.4,13,18.1,15.4,25.4,22,22.7,</pre>
+<pre id="Maine1" style="display:none">Year,Asian,Non-Hispanic Black,Hispanic,Hawaiian/Pacific Islander,American Indian/Alaska Native,Non-Hispanic White,2 or more races
+			2009,24.2,11.1,21.5,17.9,,17.7,17.7,
+			2011,23.7,17.3,18.9,21.8,,23,23.9,
+			2013,21.7,14.1,25.7,19.3,,26,22.4,
+			2015,21.2,13.4,21.2,19.6,,21.5,22,</pre>
+<pre id="Michigan1" style="display:none">Year,Asian,Non-Hispanic Black,Hispanic,Hawaiian/Pacific Islander,American Indian/Alaska Native,Non-Hispanic White,2 or more races
+			2007,16,,21.9,19.8,,,22.3,
+			2009,26.4,20.3,22.5,23.6,,,26.4,
+			2011,26.1,,19.9,27,,,29.1,
+			2013,25.8,14.7,20.1,26.9,,,28.6,
+			2015,23.4,20,18,22.3,,,26.5,</pre>
+<pre id="Missouri1" style="display:none">Year,Asian,Non-Hispanic Black,Hispanic,Hawaiian/Pacific Islander,American Indian/Alaska Native,Non-Hispanic White,2 or more races
+			2007,,,20.3,,,,27.8,
+			2009,,,24.8,,,,27.2,
+			2013,,,24,19,,,28.4,
+			2015,,,19.5,23,,,27.9,</pre>
+<pre id="Mississippi1" style="display:none">Year,Asian,Non-Hispanic Black,Hispanic,Hawaiian/Pacific Islander,American Indian/Alaska Native,Non-Hispanic White,2 or more races
+			2007,,,19.3,,,,23.3,
+			2009,,,19.3,,,,27.2,
+			2011,,,21.8,,,,29.5,
+			2013,,,22,,,,29.6,
+			2015,28.8,,19.8,31.7,,,22.2,</pre>
+<pre id="Montana1" style="display:none">Year,Asian,Non-Hispanic Black,Hispanic,Hawaiian/Pacific Islander,American Indian/Alaska Native,Non-Hispanic White,2 or more races
+			2007,24.1,,,17,,18.8,21.6,
+			2009,,,,18.1,,,21.9,
+			2011,34.3,,,32,,26.6,28.6,
+			2013,29.6,,,29.3,,28.1,27.5,
+			2015,30.3,,,25.6,,30.1,29,</pre>
+<pre id="North Carolina1" style="display:none">Year,Asian,Non-Hispanic Black,Hispanic,Hawaiian/Pacific Islander,American Indian/Alaska Native,Non-Hispanic White,2 or more races
+			2007,28.6,,22.6,16.8,,,26.5,
+			2009,20.2,28.6,19.7,20.8,,,27,
+			2011,25.4,,20.4,23,,,29.7,
+			2013,33.9,,24.6,21.7,,,26.9,
+			2015,21.4,16.4,22.7,18.6,,,27.4,</pre>
+<pre id="North Dakota1" style="display:none">Year,Asian,Non-Hispanic Black,Hispanic,Hawaiian/Pacific Islander,American Indian/Alaska Native,Non-Hispanic White,2 or more races
+			2007,,,,,,23.7,21.2,
+			2013,,,,17.1,,26.1,25,
+			2015,,,,30.5,,,24.4,</pre>
+<pre id="Nebraska1" style="display:none">Year,Asian,Non-Hispanic Black,Hispanic,Hawaiian/Pacific Islander,American Indian/Alaska Native,Non-Hispanic White,2 or more races
+			2011,30,,29,23.3,,,29.2,
+			2013,,,,21.7,,,34.8,
+			2015,,,,20.7,,,32.1,</pre>
+<pre id="New Hampshire1" style="display:none">Year,Asian,Non-Hispanic Black,Hispanic,Hawaiian/Pacific Islander,American Indian/Alaska Native,Non-Hispanic White,2 or more races
+			2007,,,,,,,23.3,
+			2009,,,,,,,23,
+			2013,,,,25.6,,,22.6,
+			2015,26,18.1,23.9,21.4,,26.1,22.1,</pre>
+<pre id="New Jersey1" style="display:none">Year,Asian,Non-Hispanic Black,Hispanic,Hawaiian/Pacific Islander,American Indian/Alaska Native,Non-Hispanic White,2 or more races
+			2013,,23.4,24.5,26.3,,,29.4,</pre>
+<pre id="New Mexico1" style="display:none">Year,Asian,Non-Hispanic Black,Hispanic,Hawaiian/Pacific Islander,American Indian/Alaska Native,Non-Hispanic White,2 or more races
+			2007,,,,21.2,,20.2,23.9,
+			2009,,,,23,,21.9,24.5,
+			2011,29.3,,,24.1,,27.6,30,
+			2013,25.5,21.3,,30.6,,35.1,32,
+			2015,35.6,,30.1,29.9,,30.2,33.6,</pre>
+<pre id="Nevada1" style="display:none">Year,Asian,Non-Hispanic Black,Hispanic,Hawaiian/Pacific Islander,American Indian/Alaska Native,Non-Hispanic White,2 or more races
+			2007,,,23.8,17.9,,,26.5,
+			2009,25.2,11.2,31.7,20.4,,,27.7,
+			2013,23.9,,32.8,21,,,25.1,
+			2015,,,,26.8,,,32.6,</pre>
+<pre id="New York1" style="display:none">Year,Asian,Non-Hispanic Black,Hispanic,Hawaiian/Pacific Islander,American Indian/Alaska Native,Non-Hispanic White,2 or more races
+			2007,23.8,17.2,20.5,18.6,18.2,18.7,21.3,
+			2009,22.6,17.5,20.5,19.6,29.3,25,25.9,
+			2011,23.1,16.5,23.4,24.8,25.7,20.7,26.9,
+			2013,37.5,16.6,20.7,17,67.4,34,30.4,
+			2015,22.3,18.8,22.4,18.4,37.4,13.6,26.7,</pre>
+<pre id="Ohio1" style="display:none">Year,Asian,Non-Hispanic Black,Hispanic,Hawaiian/Pacific Islander,American Indian/Alaska Native,Non-Hispanic White,2 or more races
+			2007,,,28.3,30.9,,,26.3,
+			2011,,,26.7,,,,25.3,
+			2013,,,27,,,,25.5,</pre>
+<pre id="Oklahoma1" style="display:none">Year,Asian,Non-Hispanic Black,Hispanic,Hawaiian/Pacific Islander,American Indian/Alaska Native,Non-Hispanic White,2 or more races
+			2007,30.3,,29.5,24.3,,27,30.5,
+			2009,30.4,,29.8,23.8,,25.6,28.1,
+			2011,37.5,,,27.1,,40.8,31.4,
+			2013,37.1,,43.6,30,,38.8,39.5,
+			2015,30.1,,,30.9,,26.2,33,</pre>
+<pre id="Pennsylvania1" style="display:none">Year,Asian,Non-Hispanic Black,Hispanic,Hawaiian/Pacific Islander,American Indian/Alaska Native,Non-Hispanic White,2 or more races
+			2009,,,27,24.5,,,28.1,
+			2015,37.5,,27,22.6,,,25.1,</pre>
+<pre id="Puerto Rico1" style="display:none">Year,Asian,Non-Hispanic Black,Hispanic,Hawaiian/Pacific Islander,American Indian/Alaska Native,Non-Hispanic White,2 or more races
+			2015,,,,18.3,,,,</pre>
+<pre id="Rhode Island1" style="display:none">Year,Asian,Non-Hispanic Black,Hispanic,Hawaiian/Pacific Islander,American Indian/Alaska Native,Non-Hispanic White,2 or more races
+			2007,27.8,,22.1,19.6,,,25.6,
+			2009,23.9,18.9,23.6,19,,,25.1,
+			2011,28.8,14,24.1,18.7,,,29.7,
+			2013,25.3,9.8,23.6,17,,,25.5,
+			2015,25.2,13.7,20.1,13.8,,,22.7,</pre>
+<pre id="South Carolina1" style="display:none">Year,Asian,Non-Hispanic Black,Hispanic,Hawaiian/Pacific Islander,American Indian/Alaska Native,Non-Hispanic White,2 or more races
+			2007,,,18.9,,,,21,
+			2009,,,14.7,,,,18.3,
+			2011,,,19.6,,,,31,
+			2013,,,21.8,19.7,,,24.7,
+			2015,,,18,16.7,,,28.1,</pre>
+<pre id="South Dakota1" style="display:none">Year,Asian,Non-Hispanic Black,Hispanic,Hawaiian/Pacific Islander,American Indian/Alaska Native,Non-Hispanic White,2 or more races
+			2007,,,,,,19.3,23.5,
+			2009,,,,23.1,,,26,
+			2011,,,,,,23.2,28.3,
+			2013,,,,,,,29,
+			2015,,,,,,,28.5,</pre>
+<pre id="Tennessee1" style="display:none">Year,Asian,Non-Hispanic Black,Hispanic,Hawaiian/Pacific Islander,American Indian/Alaska Native,Non-Hispanic White,2 or more races
+			2007,,,21.1,20.1,,,25.6,
+			2009,,,22.7,21.1,,,24.6,
+			2011,,,26.7,26.1,,,31.9,
+			2013,,,26.3,20,,,26,
+			2015,31.2,,24.2,19.6,,,27.2,</pre>
+<pre id="Texas1" style="display:none">Year,Asian,Non-Hispanic Black,Hispanic,Hawaiian/Pacific Islander,American Indian/Alaska Native,Non-Hispanic White,2 or more races
+			2007,,,27,21.5,,,29.3,
+			2009,,18.7,30.6,22.4,,,31.4,
+			2011,30.5,17.2,31.4,22.8,,,32.1,
+			2013,,,32.5,26.4,,,34.4,</pre>
+<pre id="Utah1" style="display:none">Year,Asian,Non-Hispanic Black,Hispanic,Hawaiian/Pacific Islander,American Indian/Alaska Native,Non-Hispanic White,2 or more races
+			2007,,,,26.1,,,18.2,
+			2011,,,,18.9,,,20.8,
+			2013,,,,16.4,,,20.5,</pre>
+<pre id="Virginia1" style="display:none">Year,Asian,Non-Hispanic Black,Hispanic,Hawaiian/Pacific Islander,American Indian/Alaska Native,Non-Hispanic White,2 or more races
+			2011,,,24.3,18.5,,,26.2,
+			2013,26.8,15,22.9,15.8,,,26.5,
+			2015,24.4,16,21,17.3,,,29.4,</pre>
+<pre id="Vermont1" style="display:none">Year,Asian,Non-Hispanic Black,Hispanic,Hawaiian/Pacific Islander,American Indian/Alaska Native,Non-Hispanic White,2 or more races
+			2007,28.1,,,32.2,,24.9,25.7,
+			2009,24.4,25.4,30.2,29.4,,37.2,23.3,
+			2011,24.5,16.2,29.2,25.4,,33,24.4,
+			2013,30.9,,31.3,26.8,,34.4,24.9,
+			2015,22.1,17.7,30.3,24.5,,28.5,23,</pre>
+<pre id="Wisconsin1" style="display:none">Year,Asian,Non-Hispanic Black,Hispanic,Hawaiian/Pacific Islander,American Indian/Alaska Native,Non-Hispanic White,2 or more races
+			2009,,,22,20.7,,,24.6,
+			2011,28.9,20.1,19.1,23.5,,,29.4,
+			2013,19.4,11.2,15.1,22.9,,,25.7,</pre>
+<pre id="West Virginia1" style="display:none">Year,Asian,Non-Hispanic Black,Hispanic,Hawaiian/Pacific Islander,American Indian/Alaska Native,Non-Hispanic White,2 or more races
+			2007,,,,,,,26.2,
+			2009,,,,,,,22.4,
+			2011,,,,,,,28.6,
+			2013,,,,,,,30.5,
+			2015,,,,,,,26.2,</pre>
+<pre id="Wyoming1" style="display:none">Year,Asian,Non-Hispanic Black,Hispanic,Hawaiian/Pacific Islander,American Indian/Alaska Native,Non-Hispanic White,2 or more races
+			2007,,,,24.5,,,27,
+			2009,24.3,,,20.6,,,26.4,
+			2011,22.2,,,24.6,,37.1,26.2,
+			2013,32.1,,,25.7,,,28.3,
+			2015,25.6,,,24.9,,32.5,27.7,</pre>
+<pre id="National1" style="display:none">Year,Asian,Non-Hispanic Black,Hispanic,Hawaiian/Pacific Islander,American Indian/Alaska Native,Non-Hispanic White,2 or more races
+			2011,31.9,19.8,26,26.5,27.6,29.1,30.4,
+			2013,27.8,21.8,26.3,25.5,27.5,30,28.2,
+			2015,30.4,16.5,24.2,24.6,,39.2,29,</pre>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+</div>
+
+
+
+
+
+</head>
+<body>
+
+
+		<input class="button" type="button" value="Back"onclick="location.href='Index.html'"/>
+
+
+
+
+
+
+
+<script language = "JavaScript">
+//$(function () {
+        //$('#container').highcharts({
+		
+		
+	 var dataOptions = {chart: {renderTo: 'container1', type: 'column'},
+						title: {text: 'Percent of students in grades 9-12 who achieve 1 hour or more of moderate-and/or vigorous-intensity physical activity daily'},
+						subtitle: {text: 'Select state from Dropdown list'},
+						data: {csv: document.getElementById('Alabama').innerHTML},
+						exporting: {enabled: false},
+						credits: {enabled: false},
+	                    plotOptions: {column: {stacking: 'normal', marker: {enabled: false}}},
+						series: [{lineWidth: 1}, {color: '#c4392d', negativeColor: '#5679c4', fillOpacity: 0.5}]
+						}
+	var chart = new Highcharts.Chart(dataOptions);
+		
+
+
+
+$("#chartType").change(function() {
+  var selVal = $("#chartType").val();
+  
+ 
+  if (selVal == '0' || selVal == 'Alabama') {
+    dataOptions.data = {
+      csv: document.getElementById('Alabama').innerHTML
+    }
+  }else if (selVal == '0' || selVal == 'Arizona') {
+    dataOptions.data = {
+      csv: document.getElementById('Arizona').innerHTML
+    }
+  }else if (selVal == '0' || selVal == 'Alaska') {
+    dataOptions.data = {
+      csv: document.getElementById('Alaska').innerHTML
+    }
+  }else if (selVal == '0' || selVal == 'Arkansas') {
+    dataOptions.data = {
+      csv: document.getElementById('Arkansas').innerHTML
+    }
+  }else if (selVal == '0' || selVal == 'California') {
+    dataOptions.data = {
+      csv: document.getElementById('California').innerHTML
+    }
+  }else if (selVal == '0' || selVal == 'Colorado') {
+    dataOptions.data = {
+      csv: document.getElementById('Colorado').innerHTML
+    }
+  }else if (selVal == '0' || selVal == 'Connecticut') {
+    dataOptions.data = {
+      csv: document.getElementById('Connecticut').innerHTML
+    }
+  }else if (selVal == '0' || selVal == 'Delaware') {
+    dataOptions.data = {
+      csv: document.getElementById('Delaware').innerHTML
+    }
+  }else if (selVal == '0' || selVal == 'District of Colombia') {
+    dataOptions.data = {
+      csv: document.getElementById('District of Colombia').innerHTML
+    }
+  }else if (selVal == '0' || selVal == 'Florida') {
+    dataOptions.data = {
+      csv: document.getElementById('Florida').innerHTML
+    }
+  }else if (selVal == '0' || selVal == 'Georgia') {
+    dataOptions.data = {
+      csv: document.getElementById('Georgia').innerHTML
+    }
+  }else if (selVal == '0' || selVal == 'Hawaii') {
+    dataOptions.data = {
+      csv: document.getElementById('Hawaii').innerHTML
+    }
+  }else if (selVal == '0' || selVal == 'Idaho') {
+    dataOptions.data = {
+      csv: document.getElementById('Idaho').innerHTML
+    }
+  }else if (selVal == '0' || selVal == 'Illinois') {
+    dataOptions.data = {
+      csv: document.getElementById('Illinois').innerHTML
+    }
+  }else if (selVal == '0' || selVal == 'Indiana') {
+    dataOptions.data = {
+      csv: document.getElementById('Indiana').innerHTML
+    }
+  }else if (selVal == '0' || selVal == 'Iowa') {
+    dataOptions.data = {
+      csv: document.getElementById('Iowa').innerHTML
+    }
+  }else if (selVal == '0' || selVal == 'Kansas') {
+    dataOptions.data = {
+      csv: document.getElementById('Kansas').innerHTML
+    }
+  }else if (selVal == '0' || selVal == 'Kentucky') {
+    dataOptions.data = {
+      csv: document.getElementById('Kentucky').innerHTML
+    }
+  }else if (selVal == '0' || selVal == 'Louisiana') {
+    dataOptions.data = {
+      csv: document.getElementById('Louisiana').innerHTML
+    }
+  }else if (selVal == '0' || selVal == 'Massachusetts') {
+    dataOptions.data = {
+      csv: document.getElementById('Massachusetts').innerHTML
+    }
+  }else if (selVal == '0' || selVal == 'Maryland') {
+    dataOptions.data = {
+      csv: document.getElementById('Maryland').innerHTML
+    }
+  }else if (selVal == '0' || selVal == 'Maine') {
+    dataOptions.data = {
+      csv: document.getElementById('Maine').innerHTML
+    }
+  }else if (selVal == '0' || selVal == 'Michigan') {
+    dataOptions.data = {
+      csv: document.getElementById('Michigan').innerHTML
+    }
+  }else if (selVal == '0' || selVal == 'Minnesota') {
+    dataOptions.data = {
+      csv: document.getElementById('Minnesota').innerHTML
+    }
+  }else if (selVal == '0' || selVal == 'Missouri') {
+    dataOptions.data = {
+      csv: document.getElementById('Missouri').innerHTML
+    }
+  }else if (selVal == '0' || selVal == 'Mississippi') {
+    dataOptions.data = {
+      csv: document.getElementById('Mississippi').innerHTML
+    }
+  }else if (selVal == '0' || selVal == 'Montana') {
+    dataOptions.data = {
+      csv: document.getElementById('Montana').innerHTML
+    }
+  }else if (selVal == '0' || selVal == 'North Carolina') {
+    dataOptions.data = {
+      csv: document.getElementById('North Carolina').innerHTML
+    }
+  }else if (selVal == '0' || selVal == 'North Dakota') {
+    dataOptions.data = {
+      csv: document.getElementById('North Dakota').innerHTML
+    }
+  }else if (selVal == '0' || selVal == 'Nebraska') {
+    dataOptions.data = {
+      csv: document.getElementById('Nebraska').innerHTML
+    }
+  }else if (selVal == '0' || selVal == 'New Hampshire') {
+    dataOptions.data = {
+      csv: document.getElementById('New Hampshire').innerHTML
+    }
+  }else if (selVal == '0' || selVal == 'New Jersey') {
+    dataOptions.data = {
+      csv: document.getElementById('New Jersey').innerHTML
+    }
+  }else if (selVal == '0' || selVal == 'New Mexico') {
+    dataOptions.data = {
+      csv: document.getElementById('New Mexico').innerHTML
+    }
+  }else if (selVal == '0' || selVal == 'Nevada') {
+    dataOptions.data = {
+      csv: document.getElementById('Nevada').innerHTML
+    }
+  }else if (selVal == '0' || selVal == 'New York') {
+    dataOptions.data = {
+      csv: document.getElementById('New York').innerHTML
+    }
+  }else if (selVal == '0' || selVal == 'Ohio') {
+    dataOptions.data = {
+      csv: document.getElementById('Ohio').innerHTML
+    }
+  }else if (selVal == '0' || selVal == 'Oklahoma') {
+    dataOptions.data = {
+      csv: document.getElementById('Oklahoma').innerHTML
+    }
+  }else if (selVal == '0' || selVal == 'Oregon') {
+    dataOptions.data = {
+      csv: document.getElementById('Oregon').innerHTML
+    }
+  }else if (selVal == '0' || selVal == 'Pennsylvania') {
+    dataOptions.data = {
+      csv: document.getElementById('Pennsylvania').innerHTML
+    }
+  }else if (selVal == '0' || selVal == 'Puerto Rico') {
+    dataOptions.data = {
+      csv: document.getElementById('Puerto Rico').innerHTML
+    }
+  }else if (selVal == '0' || selVal == 'Rhode Island') {
+    dataOptions.data = {
+      csv: document.getElementById('Rhode Island').innerHTML
+    }
+  }else if (selVal == '0' || selVal == 'South Carolina') {
+    dataOptions.data = {
+      csv: document.getElementById('South Carolina').innerHTML
+    }
+  }else if (selVal == '0' || selVal == 'South Dakota') {
+    dataOptions.data = {
+      csv: document.getElementById('South Dakota').innerHTML
+    }
+  }else if (selVal == '0' || selVal == 'Tennessee') {
+    dataOptions.data = {
+      csv: document.getElementById('Tennessee').innerHTML
+    }
+  }else if (selVal == '0' || selVal == 'Texas') {
+    dataOptions.data = {
+      csv: document.getElementById('Texas').innerHTML
+    }
+  }else if (selVal == '0' || selVal == 'Utah') {
+    dataOptions.data = {
+      csv: document.getElementById('Utah').innerHTML
+    }
+  }else if (selVal == '0' || selVal == 'Virginia') {
+    dataOptions.data = {
+      csv: document.getElementById('Virginia').innerHTML
+    }
+  }else if (selVal == '0' || selVal == 'Virgin Islands') {
+    dataOptions.data = {
+      csv: document.getElementById('Virgin Islands').innerHTML
+    }
+  }else if (selVal == '0' || selVal == 'Vermont') {
+    dataOptions.data = {
+      csv: document.getElementById('Vermont').innerHTML
+    }
+  }else if (selVal == '0' || selVal == 'Washington') {
+    dataOptions.data = {
+      csv: document.getElementById('Washington').innerHTML
+    }
+  }else if (selVal == '0' || selVal == 'Wisconsin') {
+    dataOptions.data = {
+      csv: document.getElementById('Wisconsin').innerHTML
+    }
+  }else if (selVal == '0' || selVal == 'West Virginia') {
+    dataOptions.data = {
+      csv: document.getElementById('West Virginia').innerHTML
+    }
+  }else if (selVal == '0' || selVal == 'Wyoming') {
+    dataOptions.data = {
+      csv: document.getElementById('Wyoming').innerHTML
+    }
+  }else {
+    dataOptions.data = {
+      csv: document.getElementById('Alabama').innerHTML
+    }
+  }
+  
+  var chart = new Highcharts.Chart(dataOptions);
+ 
+    
+  
+});
+		
+           
+       // });
+    //});
+    
+//$(function () {
+        //$('#container2').highcharts({
+            var dataOptions2 = {chart: {renderTo: 'container2', type: 'column'},
+						title: {text: 'Percent of students in grades 9-12 who achieve 1 hour or more of moderate-and/or vigorous-intensity physical activity daily'},
+						subtitle: {text: 'Select State from Dropdown List'},
+						data: {csv: document.getElementById('Alabama1').innerHTML},
+						exporting: {enabled: false},
+						
+						credits: {enabled: false},
+						plotOptions: {column: {stacking: 'normal', marker: {enabled: false}}},
+						series: [{lineWidth: 1}, {color: '#c4392d', negativeColor: '#5679c4', fillOpacity: 0.5}]
+						}
+	var chart = new Highcharts.Chart(dataOptions2);
+
+	$("#chartType").change(function() {
+	var selVal = $("#chartType").val();
+	if 		(selVal == '0' || selVal == 'Alabama') {dataOptions2.data = {csv: document.getElementById('Alabama1').innerHTML}}
+	else if (selVal == '0' || selVal == 'Alaska') {dataOptions2.data = {csv: document.getElementById('Alaska1').innerHTML}}
+	else if (selVal == '0' || selVal == 'Arizona') {dataOptions2.data = {csv: document.getElementById('Arizona1').innerHTML}} 
+	else if (selVal == '0' || selVal == 'Arkansas') {dataOptions2.data = {csv: document.getElementById('Arkansas1').innerHTML}}
+	else if (selVal == '0' || selVal == 'California') {dataOptions2.data = {csv: document.getElementById('California1').innerHTML}}
+	else if (selVal == '0' || selVal == 'Colorado') {dataOptions2.data = {csv: document.getElementById('Colorado1').innerHTML}}
+	else if (selVal == '0' || selVal == 'Connecticut') {dataOptions2.data = {csv: document.getElementById('Connecticut1').innerHTML}}
+	else if (selVal == '0' || selVal == 'Delaware') {dataOptions2.data = {csv: document.getElementById('Delaware1').innerHTML}}
+	else if (selVal == '0' || selVal == 'District of Colombia') {dataOptions2.data = {csv: document.getElementById('District of Colombia1').innerHTML}}
+	else if (selVal == '0' || selVal == 'Florida') {dataOptions2.data = {csv: document.getElementById('Florida1').innerHTML}}
+	else if (selVal == '0' || selVal == 'Georgia') {dataOptions2.data = {csv: document.getElementById('Georgia1').innerHTML}}
+	else if (selVal == '0' || selVal == 'Hawaii') {dataOptions2.data = {csv: document.getElementById('Hawaii1').innerHTML}}
+	else if (selVal == '0' || selVal == 'Idaho') {dataOptions2.data = {csv: document.getElementById('Idaho1').innerHTML}}
+	else if (selVal == '0' || selVal == 'Illinois') {dataOptions2.data = {csv: document.getElementById('Illinois1').innerHTML}}
+	else if (selVal == '0' || selVal == 'Indiana') {dataOptions2.data = {csv: document.getElementById('Indiana1').innerHTML}}
+	else if (selVal == '0' || selVal == 'Iowa') {dataOptions2.data = {csv: document.getElementById('Iowa1').innerHTML}}
+	else if (selVal == '0' || selVal == 'Kansas') {dataOptions2.data = {csv: document.getElementById('Kansas1').innerHTML}}
+	else if (selVal == '0' || selVal == 'Kentucky') {dataOptions2.data = {csv: document.getElementById('Kentucky1').innerHTML}}
+	else if (selVal == '0' || selVal == 'Louisiana') {dataOptions2.data = {csv: document.getElementById('Louisiana1').innerHTML}}
+	else if (selVal == '0' || selVal == 'Massachusetts') {dataOptions2.data = {csv: document.getElementById('Massachusetts1').innerHTML}}
+	else if (selVal == '0' || selVal == 'Maryland') {dataOptions2.data = {csv: document.getElementById('Maryland1').innerHTML}}
+	else if (selVal == '0' || selVal == 'Maine') {dataOptions2.data = {csv: document.getElementById('Maine1').innerHTML}}
+	else if (selVal == '0' || selVal == 'Michigan') {dataOptions2.data = {csv: document.getElementById('Michigan1').innerHTML}}
+	else if (selVal == '0' || selVal == 'Minnesota') {dataOptions2.data = {csv: document.getElementById('Minnesota1').innerHTML}}
+	else if (selVal == '0' || selVal == 'Missouri') {dataOptions2.data = {csv: document.getElementById('Missouri1').innerHTML}}
+	else if (selVal == '0' || selVal == 'Mississippi') {dataOptions2.data = {csv: document.getElementById('Mississippi1').innerHTML}}
+	else if (selVal == '0' || selVal == 'Montana') {dataOptions2.data = {csv: document.getElementById('Montana1').innerHTML}}
+	else if (selVal == '0' || selVal == 'North Carolina') {dataOptions2.data = {csv: document.getElementById('North Carolina1').innerHTML}}
+	else if (selVal == '0' || selVal == 'North Dakota') {dataOptions2.data = {csv: document.getElementById('North Dakota1').innerHTML}}
+	else if (selVal == '0' || selVal == 'Nebraska') {dataOptions2.data = {csv: document.getElementById('Nebraska1').innerHTML}}
+	else if (selVal == '0' || selVal == 'New Hampshire') {dataOptions2.data = {csv: document.getElementById('New Hampshire1').innerHTML}}
+	else if (selVal == '0' || selVal == 'New Jersey') {dataOptions2.data = {csv: document.getElementById('New Jersey1').innerHTML}}
+	else if (selVal == '0' || selVal == 'New Mexico') {dataOptions2.data = {csv: document.getElementById('New Mexico1').innerHTML}}
+	else if (selVal == '0' || selVal == 'Nevada') {dataOptions2.data = {csv: document.getElementById('Nevada1').innerHTML}}
+	else if (selVal == '0' || selVal == 'New York') {dataOptions2.data = {csv: document.getElementById('New York1').innerHTML}}
+	else if (selVal == '0' || selVal == 'Ohio') {dataOptions2.data = {csv: document.getElementById('Ohio1').innerHTML}}
+	else if (selVal == '0' || selVal == 'Oklahoma') {dataOptions2.data = {csv: document.getElementById('Oklahoma1').innerHTML}}
+	else if (selVal == '0' || selVal == 'Oregon') {dataOptions2.data = {csv: document.getElementById('Oregon1').innerHTML}}
+	else if (selVal == '0' || selVal == 'Pennsylvania') {dataOptions2.data = {csv: document.getElementById('Pennsylvania1').innerHTML}}
+	else if (selVal == '0' || selVal == 'Puerto Rico') {dataOptions2.data = {csv: document.getElementById('Puerto Rico1').innerHTML}}
+	else if (selVal == '0' || selVal == 'Rhode Island') {dataOptions2.data = {csv: document.getElementById('Rhode Island1').innerHTML}}
+	else if (selVal == '0' || selVal == 'South Carolina') {dataOptions2.data = {csv: document.getElementById('South Carolina1').innerHTML}}
+	else if (selVal == '0' || selVal == 'South Dakota') {dataOptions2.data = {csv: document.getElementById('South Dakota1').innerHTML}}
+	else if (selVal == '0' || selVal == 'Tennessee') {dataOptions2.data = {csv: document.getElementById('Tennessee1').innerHTML}}
+	else if (selVal == '0' || selVal == 'Texas') {dataOptions2.data = {csv: document.getElementById('Texas1').innerHTML}}
+	else if (selVal == '0' || selVal == 'Utah') {dataOptions2.data = {csv: document.getElementById('Utah1').innerHTML}}
+	else if (selVal == '0' || selVal == 'Virginia') {dataOptions2.data = {csv: document.getElementById('Virginia1').innerHTML}}
+	else if (selVal == '0' || selVal == 'Virgin Islands') {dataOptions2.data = {csv: document.getElementById('Virgin Islands1').innerHTML}}
+	else if (selVal == '0' || selVal == 'Vermont') {dataOptions2.data = {csv: document.getElementById('Vermont1').innerHTML}}
+	else if (selVal == '0' || selVal == 'Washington') {dataOptions2.data = {csv: document.getElementById('Washington1').innerHTML}}
+	else if (selVal == '0' || selVal == 'Wisconsin') {dataOptions2.data = {csv: document.getElementById('Wisconsin1').innerHTML}}
+	else if (selVal == '0' || selVal == 'West Virginia') {dataOptions2.data = {csv: document.getElementById('West Virginia1').innerHTML}}
+	else if (selVal == '0' || selVal == 'Wyoming') {dataOptions2.data = {csv: document.getElementById('Wyoming1').innerHTML}}
+	else {dataOptions2.data = {csv: document.getElementById('Alabama1').innerHTML}}
+	
+	var chart = new Highcharts.Chart(dataOptions2);
+	});
+       // });
+   // });
+    
+
+	
+	
+	
+	 
+	
+	
+	
+	
+
+ 
+
+    </script>
+
+
+   </body>
+   
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
